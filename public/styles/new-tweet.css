@@ -26,4 +26,17 @@ button {
   font-family: Bungee, sans-serif;
  }
 
- 
+ .tweet-header {
+  display: flex;
+  justify-content: space-between;
+ }
+
+ .tweet-header-left {
+  display: flex;
+  /* column-gap: ; */
+ }
+
+ .tweet-footer {
+  display: flex;
+  justify-content: space-between;
+ }

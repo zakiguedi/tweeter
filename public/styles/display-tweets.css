@@ -1,7 +1,21 @@
 .tweet {
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   padding: 1em;
-  margin-bottom: 1em;
+  margin: 1em;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.tweet:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.tweet .icon {
+  color: #999;
+  transition: color 0.3s ease-in-out;
+}
+
+.tweet:hover .icon {
+  color: #1da1f2;
 }
 
 .tweet header {
@@ -34,14 +48,6 @@
   color: #999;
 }
 
-.icons {
-  display: flex;
-  justify-content: space-between;
-  width: 5em;
-  margin: 0 auto;
-  margin-top: 0.5em;
-}
-
 .icons i {
   color: #999;
   cursor: pointer;
@@ -54,4 +60,8 @@
 .icons form div {
   display: flex;
   justify-content: space-between;
+}
+
+.tweet:hover .icon:hover {
+  color: #ffad1f;
 }
