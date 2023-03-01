@@ -5,18 +5,7 @@
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.tweet:hover {
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-}
 
-.tweet .icon {
-  color: #999;
-  transition: color 0.3s ease-in-out;
-}
-
-.tweet:hover .icon {
-  color: #1da1f2;
-}
 
 .tweet header {
   display: flex;
@@ -60,8 +49,4 @@
 .icons form div {
   display: flex;
   justify-content: space-between;
-}
-
-.tweet:hover .icon:hover {
-  color: #ffad1f;
 }

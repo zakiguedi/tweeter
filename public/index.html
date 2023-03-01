@@ -25,11 +25,7 @@
   <link rel="stylesheet" href="/styles/display-tweets.css" type="text/css" />
 
   <!-- External JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -66,26 +62,14 @@
           </div>
         </form>
     </section>
+    <section id = "tweets-container">
+    </section>
   </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </body>
 
 </html>
-<article class="tweet">
-  <div class="tweet-header">
-    <div class = "tweet-header-left"> 
-      <h2 class="user-name">Rhoda Jacobs</h2>
-    </div>
-
-    <span class="user-handle">@mrsjacobs</span>
-  </div>
-  <p class="tweet-text">Hello</p>
-  <div name="text" id="tweet-text"></div>
-  <footer class = "tweet-footer">
-    <span class="timestamp">10 days ago</span>
-    <div class="icons">
-      <i class="fas fa-flag"></i>
-      <i class="fas fa-retweet"></i>
-      <i class="fas fa-heart"></i>
-    </div>
-  </footer>
-</article>
