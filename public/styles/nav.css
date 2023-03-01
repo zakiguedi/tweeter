@@ -1,0 +1,38 @@
+nav {
+  position: fixed;
+  top: 0;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0 1.5em;
+}
+
+.logo{
+  font-family: Bungee, sans-serif; 
+  font-size: 30px;
+}
+
+nav div{
+  text-align: center;
+}
+nav > .nav-right{
+  font-size: 20px;
+}
+
+nav > .nav-right > p > span{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav > .nav-right > p{
+  padding: 0;
+  margin: 0;
+}
+
+nav .fa-angles-down{
+  color:crimson
+}

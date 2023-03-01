@@ -1,0 +1,29 @@
+#tweet-text {
+  background-color: whitesmoke;
+  border: hidden;
+  border-bottom: 3px solid black;
+  margin-bottom: 5px;
+  padding-top: 10px
+}
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tweet form div {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  font-family: Bungee, sans-serif;
+ }
+
+ .counter {
+  font-family: Bungee, sans-serif;
+ }
+
+ 

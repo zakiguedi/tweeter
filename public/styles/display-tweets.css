@@ -1,0 +1,57 @@
+.tweet {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.tweet header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
+.user-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.user-handle {
+  color: #999;
+  margin-left: 0.5em;
+}
+
+.tweet-text {
+  margin: 0.5em 0;
+}
+
+.timestamp {
+  color: #999;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 5em;
+  margin: 0 auto;
+  margin-top: 0.5em;
+}
+
+.icons i {
+  color: #999;
+  cursor: pointer;
+}
+
+.icons i:hover {
+  color: #1da1f2;
+}
+
+.icons form div {
+  display: flex;
+  justify-content: space-between;
+}
