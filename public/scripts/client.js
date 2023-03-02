@@ -1,3 +1,4 @@
+console.log(timeago)
 const data = [
   {
     "user": {
@@ -23,6 +24,8 @@ const data = [
   }
 ]
 function createTweetElement (tweet) {
+  const date = new Date(tweet.created_at)
+  console.log(date)
   const $tweet = $(`<article class="tweet">
   <div class="tweet-header">
     <div class = "tweet-header-left"> 
@@ -34,7 +37,7 @@ function createTweetElement (tweet) {
   <p class="tweet-text">${tweet.content.text}</p>
   <div name="text" id="tweet-text"></div>
   <footer class = "tweet-footer">
-    <span class="timestamp">10 days ago</span>
+    <span class="timestamp">${timeago.format(date)} </span>
     <div class="icons">
       <i class="fas fa-flag"></i>
       <i class="fas fa-retweet"></i>
@@ -47,10 +50,47 @@ function createTweetElement (tweet) {
 }
 
 function renderTweets (tweets) {
-  for (let i = 0; i < tweets.length; i++) {
-    console.log(tweets[i])
-    const $tweet = createTweetElement(tweets[i])
+  const sortedTweets = tweets.sort((a,b)=>{
+      const keya = new Date(a.created_at)
+      const keyb = new Date(b.created_at)
+      if (keya < keyb) return -1
+      if (keya > keyb) return 1
+      return 0
+  }).reverse()
+  console.log("sorted", sortedTweets)
+  for (let i = 0; i < sortedTweets.length; i++) {
+    console.log("tweet",sortedTweets[i])
+    const $tweet = createTweetElement(sortedTweets[i])
     $("#tweets-container").append($tweet);
   }
 }
-renderTweets(data);
+// renderTweets(data);
+
+$(document).ready(function() {
+  $('#tweet-form').on('submit', function(event) {
+    console.log("hey")
+    event.preventDefault();
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(this).serialize(),
+      success: function(response) {
+        console.log("response",response)
+        const $tweet = createTweetElement(response)
+        $('#tweets-container').prepend($tweet);
+        $('#tweet-form')[0].reset();
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus + ': ' + errorThrown);
+      }
+    });
+  });
+});
+
+const loadTweets = function() {
+  $.get("/tweets/", function(newTweet) {
+    renderTweets(newTweet.reverse());
+  });
+};
+
+loadTweets();
