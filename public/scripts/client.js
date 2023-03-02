@@ -68,22 +68,32 @@ function renderTweets (tweets) {
 
 $(document).ready(function() {
   $('#tweet-form').on('submit', function(event) {
-    console.log("hey")
     event.preventDefault();
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $(this).serialize(),
-      success: function(response) {
-        console.log("response",response)
-        const $tweet = createTweetElement(response)
-        $('#tweets-container').prepend($tweet);
-        $('#tweet-form')[0].reset();
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus + ': ' + errorThrown);
-      }
-    });
+    const tweetLength = $('#tweet-text').val().length
+    $('.error').slideUp();
+if (tweetLength === 0 ) {
+      $('.error').text("🚫 Tweet cannot be empty 🚫").slideDown();
+    } else if (tweetLength > 140) {
+      $('.error').text("🚫 Tweet cannot be more than 140 characters 🚫").slideDown();
+    } else {
+      $('.error').text('')
+      $('.counter').text('140')
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: $(this).serialize(),
+        success: function(response) {
+          console.log("response",response)
+          const $tweet = createTweetElement(response)
+          $('#tweets-container').prepend($tweet);
+          $('#tweet-form')[0].reset();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log(textStatus + ': ' + errorThrown);
+        }
+      });
+    }
+
   });
 });
 

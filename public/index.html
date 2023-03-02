@@ -52,15 +52,15 @@
     <section class="wrapper">
     </section>
     <section class="new-tweet">
-      <h2>
-        <form action="/tweets" method="post" id="tweet-form">
-          <label class="tweet-text" for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
+      <p class="error"></p>
+      <form action="/tweets" method="post" id="tweet-form">
+        <label class="tweet-text" for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
     </section>
     <section id = "tweets-container">
     </section>
