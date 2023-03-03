@@ -35,7 +35,7 @@
   color: #999;
 }
 
-.icons i {
+.icons i { 
   color: #999;
   cursor: pointer;
 }
@@ -47,4 +47,8 @@
 .icons form div {
   display: flex;
   justify-content: space-between;
+}
+
+.tweet:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

@@ -32,6 +32,27 @@ main {
   background-color: maroon;
 }
 
+@media (min-width:1024px) {
+  body main {
+    margin-left: inherit;
+    margin-right: inherit;
+    width: 60%;
+  }
+
+  .display header {
+    width:30%;
+  }
+
+  .display {
+    display: flex;
+    flex-direction: row;
+    margin-top: 75px;
+    justify-content: space-between;
+    margin-left: 40px;
+
+  }
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
